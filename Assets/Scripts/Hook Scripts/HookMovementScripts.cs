@@ -60,6 +60,9 @@ public class HookMovementScripts : MonoBehaviour{
            if(canRotate){
                canRotate = false;
                moveDown = true;
+
+            SoundManager.instance.RopeStretch(true);
+
            }
         }
     }
@@ -84,13 +87,18 @@ public class HookMovementScripts : MonoBehaviour{
                 canRotate = true;
                 ropeRenderer.RenderLine(temp, false);
                 move_Speed = inital_Move_Speed;
+                SoundManager.instance.RopeStretch(false);
 
             }
 
-            ropeRenderer.RenderLine(temp, true);
+            ropeRenderer.RenderLine(transform.position, true);
             
             
         }
+    }
+
+    public void HookAttachedItem(){
+        moveDown = false;
     }
 }
 

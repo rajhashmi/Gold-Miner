@@ -37,7 +37,7 @@ public class RopeRenderer : MonoBehaviour{
         }
         if(lineRenderer.enabled){
             Vector3 temp = startPosition.position;
-            temp.z = 0f;
+            temp.z = -10f;
 
             startPosition.position = temp;
             temp = endPosition;
